@@ -23,6 +23,9 @@ public class Main {
             if (name.isEmpty()) {
                 System.out.printf("Введите название %d машины\n", cars.size() + 1);
                 name = scanner.nextLine();
+                if (name.isEmpty()) {
+                    System.out.println("Название машины не может быть пустым");
+                }
                 continue;
             }
             System.out.printf("Введите скорость %d машины\n", cars.size() + 1);
