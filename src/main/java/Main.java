@@ -7,13 +7,13 @@ public class Main {
     static ArrayList<Car> cars = new ArrayList<>();
     static int time = 24;
     static int maxCars = 3;
-    static String errTemplate = "Не правильное здначение скорости %d (целое число от 1 до 250)\n";
+    static String errTemplate = "Не правильное здначение скорости %s (целое число от 1 до 250)\n";
 
     public static void main(String[] args) {
         addCars();
         Race race = new Race();
         race.calculation(cars, time);
-        System.out.printf("Самая быстрая машина: %s", race.getLeader().name);
+        System.out.printf("Самая быстрая машина: %s", race.getLeader().getName());
     }
 
     static void addCars() {
@@ -32,7 +32,7 @@ public class Main {
                 if (speedInput > 0 && speedInput <= 250) {
                     cars.add(new Car(name, speedInput));
                 } else {
-                    System.out.printf(errTemplate, speedInput);
+                    System.out.printf(errTemplate, input);
                     continue;
                 }
             } catch (NumberFormatException e) {
